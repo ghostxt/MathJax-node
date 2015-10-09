@@ -1,0 +1,2478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3.dev">
+<title>电路基础与实践</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="./asciidoctor.css">
+</head>
+<body class="article toc2 toc-left">
+<div id="header">
+<h1>电路基础与实践</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">目录</div>
+<ul class="sectlevel1">
+<li><a href="#_第1章_电路的基本概念与基本定律">1. 第1章 电路的基本概念与基本定律</a>
+<ul class="sectlevel2">
+<li><a href="#_电路模型">1.1. 电路模型</a>
+<ul class="sectlevel3">
+<li><a href="#_电路">1.1.1. 电路</a></li>
+<li><a href="#_电气元件">1.1.2. 电气元件</a></li>
+<li><a href="#_电路图">1.1.3. 电路图</a></li>
+</ul>
+</li>
+<li><a href="#_电路的基本物理量">1.2. 电路的基本物理量</a>
+<ul class="sectlevel3">
+<li><a href="#_电流">1.2.1. 电流</a></li>
+<li><a href="#_电位_电压_电动势">1.2.2. 电位、电压、电动势</a></li>
+<li><a href="#_电功率">1.2.3. 电功率</a></li>
+</ul>
+</li>
+<li><a href="#_线性电阻原件">1.3. 线性电阻原件</a>
+<ul class="sectlevel3">
+<li><a href="#_电阻伏安关系">1.3.1. 电阻伏安关系</a></li>
+<li><a href="#_电阻功率">1.3.2. 电阻功率</a></li>
+</ul>
+</li>
+<li><a href="#_独立源和受控源">1.4. 独立源和受控源</a>
+<ul class="sectlevel3">
+<li><a href="#_独立电压源">1.4.1. 独立电压源</a></li>
+<li><a href="#_独立电流源">1.4.2. 独立电流源</a></li>
+<li><a href="#_受控源">1.4.3. 受控源</a></li>
+</ul>
+</li>
+<li><a href="#_基尔霍夫定律">1.5. 基尔霍夫定律</a>
+<ul class="sectlevel3">
+<li><a href="#_基本概念">1.5.1. 基本概念</a></li>
+<li><a href="#_基尔霍夫电流定律">1.5.2. 基尔霍夫电流定律</a></li>
+<li><a href="#_基尔霍夫电压定律">1.5.3. 基尔霍夫电压定律</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_电位_电压的测定及电位图的绘制">1.6. 实践项目　电位,电压的测定及电位图的绘制</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_测量电位和电压">1.6.1. 任务1 测量电位和电压</a></li>
+<li><a href="#_任务2_绘制电位图">1.6.2. 任务2 绘制电位图</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_基尔霍夫定律的验证">1.7. 实践项目　基尔霍夫定律的验证</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_验证基尔霍夫电流定律">1.7.1. 任务1 验证基尔霍夫电流定律</a></li>
+<li><a href="#_任务2_验证基尔霍夫电压定律">1.7.2. 任务2 验证基尔霍夫电压定律</a></li>
+</ul>
+</li>
+<li><a href="#_习题">1.8. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第2章_直流电路的分析和计算">2. 第2章 直流电路的分析和计算</a>
+<ul class="sectlevel2">
+<li><a href="#_线性电阻网络等效变换">2.1. 线性电阻网络等效变换</a>
+<ul class="sectlevel3">
+<li><a href="#_电阻的串联_并联和混联及其等效变换">2.1.1. 电阻的串联,并联和混联及其等效变换</a></li>
+<li><a href="#_电阻星形联结和三角形联结">2.1.2. 电阻星形联结和三角形联结</a></li>
+</ul>
+</li>
+<li><a href="#_电源等效变换">2.2. 电源等效变换</a>
+<ul class="sectlevel3">
+<li><a href="#_独立源等效变换">2.2.1. 独立源等效变换</a></li>
+<li><a href="#_受控源等效变换">2.2.2. 受控源等效变换</a></li>
+</ul>
+</li>
+<li><a href="#_支路电流法">2.3. 支路电流法</a></li>
+<li><a href="#_节点电位法">2.4. 节点电位法</a>
+<ul class="sectlevel3">
+<li><a href="#_节点方程及其一般形式">2.4.1. 节点方程及其一般形式</a></li>
+<li><a href="#_节点法解题步骤">2.4.2. 节点法解题步骤</a></li>
+</ul>
+</li>
+<li><a href="#_网孔电流法">2.5. 网孔电流法</a>
+<ul class="sectlevel3">
+<li><a href="#_网孔方程及其一般形式">2.5.1. 网孔方程及其一般形式</a></li>
+<li><a href="#_网孔法解题步骤">2.5.2. 网孔法解题步骤</a></li>
+</ul>
+</li>
+<li><a href="#_叠加定理_齐性定理与替代定理">2.6. 叠加定理,齐性定理与替代定理</a>
+<ul class="sectlevel3">
+<li><a href="#_叠加定理">2.6.1. 叠加定理</a></li>
+<li><a href="#_齐性定理">2.6.2. 齐性定理</a></li>
+<li><a href="#_替代定理">2.6.3. 替代定理</a></li>
+</ul>
+</li>
+<li><a href="#_戴维南定理与诺顿定理">2.7. 戴维南定理与诺顿定理</a>
+<ul class="sectlevel3">
+<li><a href="#_戴维南定理">2.7.1. 戴维南定理</a></li>
+<li><a href="#_诺顿定理">2.7.2. 诺顿定理</a></li>
+</ul>
+</li>
+<li><a href="#_最大功率传输定理">2.8. 最大功率传输定理</a></li>
+<li><a href="#_实践项目_验证叠加定理与替代定理">2.9. 实践项目　验证叠加定理与替代定理</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_验证叠加定理">2.9.1. 任务1 验证叠加定理</a></li>
+<li><a href="#_任务2_验证替代定理">2.9.2. 任务2 验证替代定理</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_测试有源二端网络和验证戴维南定理">2.10. 实践项目　测试有源二端网络和验证戴维南定理</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_有源二端网络测试">2.10.1. 任务1 有源二端网络测试</a></li>
+<li><a href="#_任务2_验证戴维南定理">2.10.2. 任务2 验证戴维南定理</a></li>
+</ul>
+</li>
+<li><a href="#_习题_2">2.11. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第３章_动态电路的时域分析">3. 第３章 动态电路的时域分析</a>
+<ul class="sectlevel2">
+<li><a href="#_动态元件">3.1. 动态元件</a>
+<ul class="sectlevel3">
+<li><a href="#_电感元件">3.1.1. 电感元件</a></li>
+<li><a href="#_电容元件">3.1.2. 电容元件</a></li>
+</ul>
+</li>
+<li><a href="#_换路定律及初始值的确定">3.2. 换路定律及初始值的确定</a>
+<ul class="sectlevel3">
+<li><a href="#_电路的过渡过程与换路定律">3.2.1. 电路的过渡过程与换路定律</a></li>
+<li><a href="#_电路初始值的确定">3.2.2. 电路初始值的确定</a></li>
+</ul>
+</li>
+<li><a href="#_一阶电路的零输入响应">3.3. 一阶电路的零输入响应</a>
+<ul class="sectlevel3">
+<li><a href="#_概述">3.3.1. 概述</a></li>
+<li><a href="#_rc电路的零输入响应">3.3.2. RC电路的零输入响应</a></li>
+<li><a href="#_rl电路的零输入响应">3.3.3. RL电路的零输入响应</a></li>
+</ul>
+</li>
+<li><a href="#_一阶电路的零状态响应">3.4. 一阶电路的零状态响应</a>
+<ul class="sectlevel3">
+<li><a href="#_rc电路的零状态响应">3.4.1. RC电路的零状态响应</a></li>
+<li><a href="#_rl电路的零状态响应">3.4.2. RL电路的零状态响应</a></li>
+</ul>
+</li>
+<li><a href="#_一阶电路的全响应">3.5. 一阶电路的全响应</a>
+<ul class="sectlevel3">
+<li><a href="#_全响应">3.5.1. 全响应</a></li>
+<li><a href="#_三要素法">3.5.2. 三要素法</a></li>
+</ul>
+</li>
+<li><a href="#_阶跃函数和阶跃响应">3.6. 阶跃函数和阶跃响应</a>
+<ul class="sectlevel3">
+<li><a href="#_阶跃函数">3.6.1. 阶跃函数</a></li>
+<li><a href="#_阶跃响应">3.6.2. 阶跃响应</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_一阶电路的响应测试">3.7. 实践项目　一阶电路的响应测试</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_mulisim仿真软件的使用">3.7.1. 任务1 Mulisim仿真软件的使用</a></li>
+<li><a href="#_任务2_观察电容的充电_放电过程">3.7.2. 任务2 观察电容的充电,放电过程</a></li>
+<li><a href="#_任务3_方波输入的响应">3.7.3. 任务3 方波输入的响应</a></li>
+</ul>
+</li>
+<li><a href="#_习题_3">3.8. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第4章_正弦交流电路">4. 第4章 正弦交流电路</a>
+<ul class="sectlevel2">
+<li><a href="#_正弦量的基本概念">4.1. 正弦量的基本概念</a>
+<ul class="sectlevel3">
+<li><a href="#_瞬时值_最大值_有效值">4.1.1. 瞬时值,最大值,有效值</a></li>
+<li><a href="#_周期_频率_角频率">4.1.2. 周期,频率,角频率</a></li>
+<li><a href="#_相位_初相_相位差">4.1.3. 相位,初相,相位差</a></li>
+</ul>
+</li>
+<li><a href="#_正弦量的相量表示">4.2. 正弦量的相量表示</a>
+<ul class="sectlevel3">
+<li><a href="#_复数及其运算">4.2.1. 复数及其运算</a></li>
+<li><a href="#_正弦量的相量表示_2">4.2.2. 正弦量的相量表示</a></li>
+<li><a href="#_相量图">4.2.3. 相量图</a></li>
+</ul>
+</li>
+<li><a href="#_正弦交流电路中的元器件">4.3. 正弦交流电路中的元器件</a>
+<ul class="sectlevel3">
+<li><a href="#_正弦交流电路中的基本元器件">4.3.1. 正弦交流电路中的基本元器件</a></li>
+<li><a href="#_阻抗">4.3.2. 阻抗</a></li>
+<li><a href="#_导纳">4.3.3. 导纳</a></li>
+<li><a href="#_阻抗与导纳的串并联">4.3.4. 阻抗与导纳的串并联</a></li>
+</ul>
+</li>
+<li><a href="#_正弦交流电路的分析">4.4. 正弦交流电路的分析</a>
+<ul class="sectlevel3">
+<li><a href="#_正弦交流电路的的相量分析法">4.4.1. 正弦交流电路的的相量分析法</a></li>
+<li><a href="#_正弦交流电路的的相量图解法">4.4.2. 正弦交流电路的的相量图解法</a></li>
+</ul>
+</li>
+<li><a href="#_正弦交流电路的功率">4.5. 正弦交流电路的功率</a>
+<ul class="sectlevel3">
+<li><a href="#_电路基本元器件的功率">4.5.1. 电路基本元器件的功率</a></li>
+<li><a href="#_无源线性二端网络的功率">4.5.2. 无源线性二端网络的功率</a></li>
+<li><a href="#_功率因数的提高">4.5.3. 功率因数的提高</a></li>
+</ul>
+</li>
+<li><a href="#_正弦交流电路中的谐振现象">4.6. 正弦交流电路中的谐振现象</a>
+<ul class="sectlevel3">
+<li><a href="#_串联谐振">4.6.1. 串联谐振</a></li>
+<li><a href="#_并联谐振">4.6.2. 并联谐振</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_交流电路的测量">4.7. 实践项目　交流电路的测量</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_感性电路的测量">4.7.1. 任务1 感性电路的测量</a></li>
+<li><a href="#_任务2_容性电路的测量">4.7.2. 任务2 容性电路的测量</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_并联电容提高功率因数">4.8. 实践项目　并联电容提高功率因数</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_功率因数与并联电容的关系">4.8.1. 任务1 功率因数与并联电容的关系</a></li>
+<li><a href="#_任务2_将功率因数提高到特定值">4.8.2. 任务2 将功率因数提高到特定值</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_选频电路的设计实现">4.9. 实践项目　选频电路的设计实现</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_lc选频电路的设计实现">4.9.1. 任务1 LC选频电路的设计实现</a></li>
+<li><a href="#_任务2_文氏桥选频电路的设计实现">4.9.2. 任务2 文氏桥选频电路的设计实现</a></li>
+</ul>
+</li>
+<li><a href="#_习题_4">4.10. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第５章_三相交流电路">5. 第５章 三相交流电路</a>
+<ul class="sectlevel2">
+<li><a href="#_三相交流电源">5.1. 三相交流电源</a>
+<ul class="sectlevel3">
+<li><a href="#_对称三相电压">5.1.1. 对称三相电压</a></li>
+<li><a href="#_三相电源的星形和三角形联结">5.1.2. 三相电源的星形和三角形联结</a></li>
+<li><a href="#_三相电压的相序">5.1.3. 三相电压的相序</a></li>
+</ul>
+</li>
+<li><a href="#_对称三相电路的计算">5.2. 对称三相电路的计算</a>
+<ul class="sectlevel3">
+<li><a href="#_概述_2">5.2.1. 概述</a></li>
+<li><a href="#_对称负载星形联结的三相电路">5.2.2. 对称负载星形联结的三相电路</a></li>
+<li><a href="#_对称负载三角形联结的三相电路">5.2.3. 对称负载三角形联结的三相电路</a></li>
+</ul>
+</li>
+<li><a href="#_不对称三相电路的计算">5.3. 不对称三相电路的计算</a></li>
+<li><a href="#_三相电路的功率及其测量">5.4. 三相电路的功率及其测量</a>
+<ul class="sectlevel3">
+<li><a href="#_三相电路的功率计算">5.4.1. 三相电路的功率计算</a></li>
+<li><a href="#_三相电路的功率测量">5.4.2. 三相电路的功率测量</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_三相电路的联结和测量">5.5. 实践项目　三相电路的联结和测量</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_三相电路的仿真">5.5.1. 任务1 三相电路的仿真</a></li>
+<li><a href="#_任务2_三相负载星形联结时的电压_电流及功率的测量">5.5.2. 任务2 三相负载星形联结时的电压,电流及功率的测量</a></li>
+<li><a href="#_任务3_三相负载三角形联结时的电压_电流及功率的测量">5.5.3. 任务3 三相负载三角形联结时的电压,电流及功率的测量</a></li>
+</ul>
+</li>
+<li><a href="#_习题_5">5.6. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第6章_互感电路及磁路">6. 第6章 互感电路及磁路</a>
+<ul class="sectlevel2">
+<li><a href="#_互感电路的基本知识">6.1. 互感电路的基本知识</a>
+<ul class="sectlevel3">
+<li><a href="#_互感的概念">6.1.1. 互感的概念</a></li>
+<li><a href="#_互感线圈的同名端">6.1.2. 互感线圈的同名端</a></li>
+<li><a href="#_互感线圈的的伏安关系">6.1.3. 互感线圈的的伏安关系</a></li>
+</ul>
+</li>
+<li><a href="#_互感电路的计算">6.2. 互感电路的计算</a>
+<ul class="sectlevel3">
+<li><a href="#_正弦交流互感电路的分析法">6.2.1. 正弦交流互感电路的分析法</a></li>
+<li><a href="#_耦合电感的去耦等效电路分析法">6.2.2. 耦合电感的去耦等效电路分析法</a></li>
+</ul>
+</li>
+<li><a href="#_磁路的基本知识">6.3. 磁路的基本知识</a>
+<ul class="sectlevel3">
+<li><a href="#_磁路的概念">6.3.1. 磁路的概念</a></li>
+<li><a href="#_磁路的基本物理量">6.3.2. 磁路的基本物理量</a></li>
+<li><a href="#_磁路的电磁定律">6.3.3. 磁路的电磁定律</a></li>
+<li><a href="#_铁磁材料的磁性能">6.3.4. 铁磁材料的磁性能</a></li>
+</ul>
+</li>
+<li><a href="#_磁路分析">6.4. 磁路分析</a>
+<ul class="sectlevel3">
+<li><a href="#_直流磁路分析">6.4.1. 直流磁路分析</a></li>
+<li><a href="#_交流磁路分析">6.4.2. 交流磁路分析</a></li>
+</ul>
+</li>
+<li><a href="#_实践项目_互感线圈的测量">6.5. 实践项目　互感线圈的测量</a>
+<ul class="sectlevel3">
+<li><a href="#_任务1_互感线圈同名端的判别">6.5.1. 任务1 互感线圈同名端的判别</a></li>
+<li><a href="#_任务2_互感线圈的互感测量">6.5.2. 任务2 互感线圈的互感测量</a></li>
+</ul>
+</li>
+<li><a href="#_习题_6">6.6. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第7章_线性动态电路的复频域分析">7. 第7章 线性动态电路的复频域分析</a>
+<ul class="sectlevel2">
+<li><a href="#_拉普拉斯变换及其性质">7.1. 拉普拉斯变换及其性质</a>
+<ul class="sectlevel3">
+<li><a href="#_拉普拉斯变换的定义">7.1.1. 拉普拉斯变换的定义</a></li>
+<li><a href="#_拉普拉斯变换的基本性质">7.1.2. 拉普拉斯变换的基本性质</a></li>
+<li><a href="#_常用信号的拉普拉斯变换">7.1.3. 常用信号的拉普拉斯变换</a></li>
+</ul>
+</li>
+<li><a href="#_拉普拉斯反变换">7.2. 拉普拉斯反变换</a></li>
+<li><a href="#_动态线性电路的复频域模型">7.3. 动态线性电路的复频域模型</a>
+<ul class="sectlevel3">
+<li><a href="#_基尔霍夫定律的复频域形式">7.3.1. 基尔霍夫定律的复频域形式</a></li>
+<li><a href="#_动态电路元件的s域模型">7.3.2. 动态电路元件的s域模型</a></li>
+</ul>
+</li>
+<li><a href="#_线性电路的复频域求解">7.4. 线性电路的复频域求解</a>
+<ul class="sectlevel3">
+<li><a href="#_线性电路的复频域等效模型">7.4.1. 线性电路的复频域等效模型</a></li>
+<li><a href="#_线性电路的复频域法求解">7.4.2. 线性电路的复频域法求解</a></li>
+</ul>
+</li>
+<li><a href="#_习题_7">7.5. 习题</a></li>
+</ul>
+</li>
+<li><a href="#_第8章_非正弦周期电流电路的稳态分析">8. 第8章 非正弦周期电流电路的稳态分析</a>
+<ul class="sectlevel2">
+<li><a href="#_非正弦周期函数的傅里叶级数展开式">8.1. 非正弦周期函数的傅里叶级数展开式</a>
+<ul class="sectlevel3">
+<li><a href="#_非正弦周期电流电路的基本概念">8.1.1. 非正弦周期电流电路的基本概念</a></li>
+<li><a href="#_非正弦周期函数的傅里叶级数展开式详述">8.1.2. 非正弦周期函数的傅里叶级数展开式详述</a></li>
+<li><a href="#_非正弦周期函数的傅里叶级数展开式的简化">8.1.3. 非正弦周期函数的傅里叶级数展开式的简化</a></li>
+<li><a href="#_非正弦周期函数的傅里叶级数查表求法">8.1.4. 非正弦周期函数的傅里叶级数查表求法</a></li>
+</ul>
+</li>
+<li><a href="#_非正弦周期量的基本知识">8.2. 非正弦周期量的基本知识</a>
+<ul class="sectlevel3">
+<li><a href="#_有效值_平均值_平均功率">8.2.1. 有效值,平均值,平均功率</a></li>
+<li><a href="#_有效值_平均值_平均功率的计算">8.2.2. 有效值,平均值,平均功率的计算</a></li>
+</ul>
+</li>
+<li><a href="#_非正弦周期电流电路的稳态分析">8.3. 非正弦周期电流电路的稳态分析</a></li>
+<li><a href="#_习题_8">8.4. 习题</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+插入教材封面
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第1章_电路的基本概念与基本定律">第1章 电路的基本概念与基本定律</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">内容提要</dt>
+<dd>
+<p>本章主要介绍电路与电路模型、电路的基本物理量、线性电阻元件、独立源和受控源以及基尔霍夫定律。本章介绍的概念和定律是学习后面章节的基础,是电类专业重要的基础知识,应认真理解和掌握。</p>
+</dd>
+</dl>
+</div>
+<div class="sect2">
+<h3 id="_电路模型">1.1. 电路模型</h3>
+<div class="sect3">
+<h4 id="_电路">1.1.1. 电路</h4>
+<div class="paragraph">
+<p>电作为一种优越的能量形式和信息载体已经成为当今社会不可或缺的重要组成部分,而电的传输和应用又必须通过电路来实现。由各种电气元件按一定方式连接,便称为电路。
+电路的作用是实现能量的传输。</p>
+</div>
+<div class="paragraph">
+<div class="title"><strong>1.电路模型的组成</strong></div>
+<p>各个组成部分的功能如下。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">电源(信号源)</dt>
+<dd>
+<p>将其他形式的能量(如热能、机械能、化学能等)转换成电能。如各类发电机、干电池、蓄电池及各类传感器等。</p>
+</dd>
+<dt class="hdlist1">负载</dt>
+<dd>
+<p>将电能转换成其他形式的能量。如小灯泡、荧光灯、电动机、电炉等。</p>
+</dd>
+<dt class="hdlist1">控制器件</dt>
+<dd>
+<p>其作用是控制电路的状态,如开关、控制小灯泡的暗亮。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<div class="title">图1-1　手电筒电路图</div>
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//circuit_1_1.PNG" alt="circuit_1_1.png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>在图1-1所示的手电筒电路中,电池将化学能转换成电能,小灯泡将电能转换成光能和热能,导线实现能量的传输。</p>
+</div>
+<div class="paragraph">
+<div class="title"><strong>2.电路的状态</strong></div>
+<p>电路的状态可以分为3种,即通路、开路、短路。而短路是指电源不经负载直接正负极连通,此时电流很大,常常会损坏电源。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电气元件">1.1.2. 电气元件</h4>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. 部分电气元件图形符号(根据国标GB/T4728)</caption>
+<colgroup>
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+<col style="width: 16%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">符号</th>
+<th class="tableblock halign-center valign-middle">名称</th>
+<th class="tableblock halign-center valign-middle">符号</th>
+<th class="tableblock halign-center valign-middle">名称</th>
+<th class="tableblock halign-center valign-middle">符号</th>
+<th class="tableblock halign-center valign-middle">名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_dianzu.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">电阻</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_dianyayuan.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">电压源</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_dianliuyuan.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">电流源</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_npn.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">NPN三极管</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_pnp.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">PNP三极管</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_erjiguan.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">半导体二极管</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_dianrong.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">电容</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_bianyaqi.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">双绕组变压器</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_wenyaguan.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">稳压管</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_deng.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">灯</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_orgate.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">或门</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_addgate.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">与门</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_tianxian.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">天线</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_fangdaqi.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">运算放大器</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_xianquan.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">电感、线圈</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_motor.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">直流电动机</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_yadianjingti.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">压电晶体</p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock"><span class="image"><img src="http://192.168.5.5/image/circuit//all_ketiaodianzu.GIF" alt="can not view png" width="80" height="50"></span></p></td>
+<td class="tableblock halign-center valign-middle"><p class="tableblock">可调电阻</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_电路图">1.1.3. 电路图</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">框图</dt>
+<dd>
+<p>是一种用方框和连线来表示电路工作原理和构成概况的电路图。与电路模型的区别在于,框图只是简单地的将电路按照功能划分为几个部分,将每一个部分描绘成一个方框,
+在方框间用连线(有时用带箭头的连线)说明各个方框之间的关系。因此,框图只能用来体现电路的大致工作。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//c-fangkuangtu.jpg" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">装配图</dt>
+<dd>
+<p>是为了进行电路装配的一种图样,图上的符号往往是电路元件实物的外形图。只要照着图上画的样子,把电路元器件安装起来就能够完成电路的装配。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//c-zhuangpeitu.GIF" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">印制板图</dt>
+<dd>
+<p>是供装配实际电路使用的。印制电路板是在一块绝缘板上先覆上一层金属箔,再将电路不需要的金属箔腐蚀掉,剩下的金属箔部分作为电路元器件之间的连接线,然后将电路中的元器件安装在这块板上,从而完成电路的连接。由于这种电路板的一面或两面覆的金属通常是铜皮,所以印制电路板又称为覆铜板。在印制电路板的设计中,主要考虑所有元器件的分布和连接是否合理,要考虑元器件体积、散热、抗干扰、抗耦合等诸多因素。
+综合这些因素设计出来的印制电路板,与原理图完全不一致,能更好地实现电路的功能。随着科技发展,目前印制电路板的制作技术已经有了很大的发展,除了单面板、双面板外,还有多面板,已经被大量运用。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//c-yinzhibantu.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_电路的基本物理量">1.2. 电路的基本物理量</h3>
+<div class="sect3">
+<h4 id="_电流">1.2.1. 电流</h4>
+<div class="paragraph">
+<div class="title">1. 电流概述</div>
+<p>带电粒子(电荷)在电场力的作用下定向移动便形成电流。我们将正电荷运动的方向定义为电流的方向,电流的大小用电流强度表示,定义为单位时间内流过某一导体横截面的电荷量,简称电流。设在\(dt\)
+时间内通过导体截面的电荷为\(dq\),则电流表示为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[i=\cfrac {dq}{dt}\]
+</div>
+</div>
+<div class="paragraph">
+<p>在国际单位制(SI)中,时间\(t\)的单位为\(s\)(秒),电荷量的单位为\(C\)(库伦),则电流的单位为\(A\)(安培)。常用单位还有\(kA\)(千安)、\(mA\)(毫安)、\(\mu\)A(微安)等。</p>
+</div>
+<div class="paragraph">
+<p>当电流的大小和方向都不随时间变化时,称为恒定电流,简称为直流,用大写字母\(I\)表示。若电流大小和方向都随时间变化的称为交流,用小写字母\(i\)表示。交流电流一般可分为正弦交流和非正弦交流。</p>
+</div>
+<div class="paragraph">
+<div class="title">2. 电流的参考方向</div>
+<p>在进行电路分析时,若电流的方向很难确定或方向是变化的情况下,则需要假定一个电流方向,这称为参考方向。电路中的电流的参考方向与电流方向一致时,电流为正,即\(i&gt;0\),如图1-3a,b所示;
+当电流的参考方向与电流方向相反时,电流为负,即 \(i'&lt;0\)。在进行电路分析时,如果没有事先选定电流的参考方向,电流的正负就是无意义的。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.2.1_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>【例1-1】 已知电路和电流的参考方向如图1-4所示, 且\(I_a=I_c=1A,I_b=I_d=-1A\),试指出电流的实际方向。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.2.1_2.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong><br>
+a)\(I_a=1A&gt;0,I_a\)的实际方向与参考方向相同,即由A指向B;<br>
+b)\(I_b=-1A&lt;0,I_b\)的实际方向与参考方向相反,即由B指向A;<br>
+c)\(I_c=1A&gt;0,I_c\)的实际方向与参考方向相同,即由B指向A;<br>
+d)\(I_d=-1A&lt;0,I_d\)的实际方向与参考方向相反,即由A指向B;</p>
+</div>
+<div class="paragraph">
+<p>需要注意的是,电流参考方向可以任意被设定,但是一旦设定好了,在分析电路时就不能随意更改。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电位_电压_电动势">1.2.2. 电位、电压、电动势</h4>
+<div class="paragraph">
+<div class="title">电位</div>
+<p>电路中任意一点的电位等于该点与参考点之间的电压,如\(V_a=U_{ao}、V_b=U{bo}\)。电路中两点间的电压也可以用两点间的电位之差来表示,即</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U_{ab}=V_a-V_b\]
+</div>
+</div>
+<div class="paragraph">
+<p>为衡量电场力把单位正电荷从某点移到参考点所做的功,引入电位的概念。一般用"\(V\)"表示,单位为伏。可任意选择
+电路中的参考点,参考点的电位为\(0V\),在图1-5中选择"\(O\)"点为参考点。</p>
+</div>
+<div class="paragraph">
+<p>电路中两点间的电压是不变的,而电位随参考点(零电位点)选择的不同而不同。</p>
+</div>
+<div class="paragraph">
+<div class="title">电压</div>
+<p>带电粒子在电场力作用下沿电场方向运动,电场力对带电粒子做功。为衡量电场力对带电粒子所做的功,引入电压的概念。电场力把单位正电荷从电场中的a点移动到b点
+所做的功,称为a、b间的电压,用\(u\)表示,即</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[u=\cfrac {dW}{dq}\]
+</div>
+</div>
+<div class="paragraph">
+<p>在国际单位制中,电荷的单位是\(C\)(库仑),功的单位是\(J\)(焦耳),则电压的单位为\(V\)(伏特)。常用单位还有\(kV\)(千伏)、\(mV\)(毫伏)等。</p>
+</div>
+<div class="paragraph">
+<div class="title">电压的参考方向</div>
+<p>习惯上把电位降低的方向作为电压的方向。同电流一样,在不能确定电压的方向时,应选定一个参考方向,可用<strong>+</strong>、<strong>-</strong>或箭头表示,也可用字母的双下标表示,
+例如图1-5中从a点到b点的电压为\(U\)或\(U_{ab}\)。当电压参考方向与电压方向一致时,\(U&gt;0\),电压的方向由a指向b;反之,\(U&lt;0\),电压的方向由b指向a。由图1-5中电压的参考方向可知,
+\(U=U_{ab}=-U_{ba}\)。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.2.2_1.png" alt="can not view png" width="400" height="300"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">电动势</div>
+<p>在电路中,要维持电路中的电流,就必须有一个能克服电场力、把正电荷从低电位移至高电位的力,电源的内部就存在这种力,称为电源力。非电场力电源力把单位正电荷在电源内部由
+低电位端移到高电位端所做的功,称为电动势,用字母\(e(E)\)表示。电动势的方向在电源内部从低电位指向高电位,即电位升的方向,电位与电压相同,用\(V\)(伏特)表示。</p>
+</div>
+<div class="paragraph">
+<p>设电源力把正电荷\(dq\)从低电位移至高电位端所做的功为\(dW_s\),则电源的电动势为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[E=\cfrac{dW_s}{dq}\]
+</div>
+</div>
+<div class="paragraph">
+<p>电压与电动势的关系如图1-6所示。在图1-6中,电压U是电场力把单位正电荷由a点经过\(R\)移到\(O\)点所做的功,由高电位a点指向低电位\(O\)点的方向,是电压的方向。
+电动势\(E\)是电源力在电源内部克服电场的阻力,把单位正电荷从\(O\)点移到a点所做的功,电动势的方向是电位升高的方向。在图1-6这种参考方向下,电压和电动势相等,即\(U=E\)。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.2.2_2.png" alt="can not view png" width="300" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>在电路分析和计算中,电动势同电流、电压一样,参考方向可以任意假定。当计算结果为负时,则方向与参考方向相反。需要注意的是,在参考方向一经选定后,在分析的过程中不能改变。
+本课在电路中标出的电压、电流及电动势的方向一律指参考方向。</p>
+</div>
+<div class="paragraph">
+<p>电压和电流的参考方向示意图如图1-7所示。在电路中,同一元器件的电压\(u\)与电流\(i\)的参考方向选择为"同方向",即电流从电压的高电位点流向低电位点,称为相关联参考方向,
+如图1-7a所示,\(u\)和\(i\)是关联参考方向。反之,电压和电流为非关联参考方向,如图1-7b所示,\(u\)和\(i'\)是非关联参考方向。在图1-7中的方框可以是负载,也可以是电源。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.2.2_3.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电功率">1.2.3. 电功率</h4>
+<div class="paragraph">
+<p>单位时间内电流对负载所做的功,称为电功率,简称功率,用\(p\)表示,即</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[p=\cfrac{dW}{dt}=\cfrac{dW}{dq}\times \cfrac{dq}{dt}=ui\]
+</div>
+</div>
+<div class="paragraph">
+<p>在国际单位制中,功率的单位是瓦特,符号为\(W\)。常用单位还有\(kW\)(千瓦)、\(mW\)(毫瓦)。同一元器件在电流和电压的参考方向相关联情况下,元器件的电功率为\(p=ui\),如图1-7所示。
+在电流和电压的参考方向非关联情况下,元器件的电功率为\(p=-ui'\),如图1-7b所示。当\(p&gt;=0\)时,该元器件消耗(吸收)功率;反之,当\(p&lt;0\)时,该元器件发出功率。
+电气设备在一段时间内所消耗的电能为(用积分表示)</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[W=\int_{t1}^{t2}pdt=\int_{t1}^{t2}uidt\]
+</div>
+</div>
+<div class="paragraph">
+<p>当功率的单位为\(W\)(瓦),时间的单位为\(s\)(秒)时,电能的单位为\(J\)(焦耳)。工程上常用千瓦小时作为电能的单位,生活中称为度,1度=\(1kW \cdot h\),
+相当于功率为\(1kW\)的用电设备在\(1h\)内消耗的电能</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[1度=1kW \cdot h=1000W\times3600s=3.6\times10^6J\]
+</div>
+</div>
+<div class="paragraph">
+<p>为了使电气设备能够安全可靠、经济运行,引入了电气设备额定值的概念。额定值就是电气设备在给定的工作条件下运行的容许值。电气设备的额定值是生产厂家规定的,一般标在铭牌上或者写在说明书里。
+电气设备的额定值主要有额定电流\(I_N\)、额定电压\(U_N\)和额定功率\(P_N\)。额定电流是电气设备在电路的正常运行状态下允许通过的电流;
+额定电压是电气设备在电路的正常运行状态下能承受的电压,电压超过额定值为过电压、低于
+额定值为不足电压；额定功率\(P_N\)是电气设备在电路的正常运行状态下吸收和产生功率的限额。三者之间的关系为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[P_N=U_NI_N\]
+</div>
+</div>
+<div class="paragraph">
+<p>额定值是使用者使用电气设备的依据,使用时遵守。如一个白炽灯上标明\(220V\)、\(60W\),这说明额定电压为\(220V\),
+在此额定电压下消耗功率为\(60W\),当超过额定电压时,功率大于\(60W\),可能会因电流过大而烧毁,而低于额定值时,功率低于
+\(60W\),灯泡变暗。</p>
+</div>
+<div class="paragraph">
+<p>【例1-2】 图1-8a所示为一个电池,图1-8b所示为一个电阻,图1-8c和图1-8d所示为未知元件,试判断各个元件是发出功率还是吸收功率。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.2.3_1.png" alt="can not view png" width="350" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong><br>
+在图1-8a中,电压和电流是关联参考方向,\(P=UI=1mA\times5V=5mW&gt;0\),元件吸收功率,此时电池作为负载被充电。<br>
+在图1-8b中,电压和电流是非关联参考方向,\(P=-UI=-(-1.3A\times3V)=3.9W&gt;0\),这个电阻元件吸收功率,为充电。<br>
+在图1-8c中,电压和电流是关联参考方向,\(P=UI=-4A\times6V=-24W&lt;0\),元件发出功率,为电源。<br>
+在图1-8d中,电压和电流是非关联参考方向,\(P=-UI=-4A\times5V=-20W&lt;0\),元件发出功率,为电源。</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_线性电阻原件">1.3. 线性电阻原件</h3>
+<div class="sect3">
+<h4 id="_电阻伏安关系">1.3.1. 电阻伏安关系</h4>
+<div class="paragraph">
+<p>电路中的电阻元件可以是实际的电阻,也可以是用电设备的理想化模型,如电炉、灯具等,如图1-9a所示;美国、加拿大等国家用折线代表电阻元件,如图1-9b所示。
+电阻元件的表示字母是\(R\),在国际单位制中,单位是\(\Omega\)(欧姆)。常用单位还有\(k\Omega\)(千欧)、\(M\Omega\)(兆欧)等。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.3.1_1.png" alt="can not view png" width="520" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>如前所述,当电阻两端的电压与流过电阻的电流是关联参考方向时,根据欧姆定律,电压与电流有如下关系</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-1}
+u=iR
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>或者</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[i=Gu\]
+</div>
+</div>
+<div class="paragraph">
+<p>设式中,\(G\)称为电阻元件的电导,\(G=\cfrac1R\),在国际单位制中单位是\(S\)(西门子)。
+由式(1-1)可得</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-2}
+R=\cfrac ui
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.3.1_2.png" alt="can not view png" width="450" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>当电阻是个常数时,称为线性电阻。线性电阻的伏安关系曲线如图1-10所示,是一条过原点的直线。反之,当电阻\(R\)不是常数时,称为非线性电阻。这里不讨论非线性电阻。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电阻功率">1.3.2. 电阻功率</h4>
+<div class="paragraph">
+<p>根据功率的定义及式(1-1)、式(1-2)有如下关系</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[p=ui=i^2R=\cfrac{U^2}R=u^2G\]
+</div>
+</div>
+<div class="paragraph">
+<p>电阻元件是耗能元件,一般把吸收的电能转换成热能消耗掉,因此功率\(P&gt;0\)。
+电阻元件在一段时间内消耗的电能用积分表示为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[W=\int_{t_1}^{t_2}i^2R \cdot dt=\int_{t_1}^{t_2} \cfrac{u^2}Rdt\]
+</div>
+</div>
+<div class="paragraph">
+<p>在直流电路中有</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[W=I^2Rt=\cfrac{U^2}Rt\]
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_独立源和受控源">1.4. 独立源和受控源</h3>
+<div class="sect3">
+<h4 id="_独立电压源">1.4.1. 独立电压源</h4>
+<div class="paragraph">
+<div class="title">1.理想电压源</div>
+<p>理想电压源输出电压总保持为某一给定值或某一给定的时间函数,不随外电路变化。其图形符号如图1-11a所示。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.4.1_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>当理想电压源为直流电压源时称为恒压源,输出恒定电压\(U_s\),其伏安关系曲线如图1-11b所示。理想电压源的特点是,输出电流的大小和输出功率都由外电路确定。</p>
+</div>
+<div class="paragraph">
+<div class="title">2.实际电压源</div>
+<p>理想电压源严格说来是不存在的。电源在对外提供能量时,不可避免地存在内部损耗,因实际电源内部存在电阻。以直流电压源为例,实际电压源模型如图1-12a所示,相当
+于理想电压源串联一个电阻。带负载后,端电压下降,伏安关系曲线如图1-12b,也称为电压源外特性曲线。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.4.1_2.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>实际电压源的输出电压\(U\)为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-3}
+U=U_s-IR_s
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>当实际电压源的等效内阻比负载电阻小得多时,可忽略电压源内阻,此时的电压源就近似为理想电压源。</p>
+</div>
+<div class="paragraph">
+<p>由式(1-3)可以看出,当负载减小而使输出电流增加时,实际电压源的输出端电压随之下降,当电流增加到最大值时,端电压为零,最大的电流为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[I_s=\cfrac{U_s}{R_s}\]
+</div>
+</div>
+<div class="paragraph">
+<p>此时,相当于输出端的两个端子被短接,负载为零,称为短路状态。在实际使用中,一定要避免电压源两端短路,否则可烧毁电源。</p>
+</div>
+<div class="paragraph">
+<p>当电压源没有外接负载时, 称为开路状态,此时输出电流为零,输出电压称为开路电压,即\(U_{OC}\),大小等于该电压源对应的源电压,即</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U=U_{OC}=U_S\]
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_独立电流源">1.4.2. 独立电流源</h4>
+<div class="paragraph">
+<div class="title">1.理想电流源</div>
+<p>同理想电压源类似,理想电流源的输出电流总保持为某一给定值或某一给定的时间常数,不随外电路变化。理想电流源模型如图1-13a所示。理想电流源的特点是,端口
+电压大小和输出功率均由外电路确定。在直流电流源的情况下,输出的电流是恒流\(I_S\),也称为恒流源,其伏安关系曲线如图1-13b所示。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.4.2_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<div class="title">2.实际电流源</div>
+<p>理想电流源也是不存在的。当加上负载时,输出的电流要小于理想电流源的原电流,相当于电流源内部对原电流有分流。图1-14a所示为实际电流源的模型,由一个理想电流源(恒流源)
+和一个电阻并联,图1-14b所示为该实际电流源的伏安关系曲线,也叫电流源外特性曲线。可见,电流源输出电流随负载的增加而降低。输出电流\(I\)与源电流等效电阻及端口电压的关系为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-4}
+I=I_S-\cfrac{U}{R_S}
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.4.2_2.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>当电流源的内阻比负载电阻大得多时,可忽略电源内阻,将\(R_S\)支路视为开路,此时的电流源可近似为理想电流源,\(I=I_S\)</p>
+</div>
+<div class="paragraph">
+<p>由式(1-4)可知,当电流源开路时,输出电流为零,此时输出端电压为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U=U_{OC}=I_SR_S\]
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_受控源">1.4.3. 受控源</h4>
+<div class="paragraph">
+<p>前面介绍的电压源和电流源都是独立电源，这种电源的电压和电流是定值或给定的时间函数。在电路中还有一类电源,这些电压源的电压和电流源的电流,是受电路中其他部分的电压或电流控制的,
+这种电源称为受控电源。当控制的电压或电流消失或等于零时,受控电源的电压或电流也将为零。</p>
+</div>
+<div class="paragraph">
+<p>在受控源中,在这里只介绍被控量与控制量之间成比例的受控源,即线性受控源。对于线性受控源,根据受控电源的是电压源还是电流源以及控制量是电压或是电流,可分为电压控制电压源(VCVS)、
+电流控制电压源(CCVS)、电压控制电流源(VCCS)和电流控制电流源(CCCS)4种类型。这4种理想受控电源的模型如图1-15所示。</p>
+</div>
+<div class="paragraph">
+<p>在控制端,对电压控制的受控电源,其输入端电阻为无穷大;对电流控制的受控电源,其输入端电阻为零。在受控端,对受控电压源,其输出端电阻为零,输出电压恒定;对受控电流源,
+其输出端电压为无穷大,输出电流恒定。在图1-15中,受控端和控制端之间是线性关系。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.4.3_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>\(U_2=\mu U_1\)</p>
+</div>
+<div class="paragraph">
+<p>\(U_2=\gamma I_1\)</p>
+</div>
+<div class="paragraph">
+<p>\(I_2=gU_1\)</p>
+</div>
+<div class="paragraph">
+<p>\(I_2=\beta I_1\)</p>
+</div>
+<div class="paragraph">
+<p>分析有受控源的电路时要注意:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>受控源不但大小受控制量控制,而且电压极性或电流方向也受控制量控制</p>
+</li>
+<li>
+<p>在控制量不为零的情况下,受控电压源不能短路,受控电流源不能开路</p>
+</li>
+<li>
+<p>在电路等效变换过程中,控制量不能消失</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_基尔霍夫定律">1.5. 基尔霍夫定律</h3>
+<div class="sect3">
+<h4 id="_基本概念">1.5.1. 基本概念</h4>
+<div class="paragraph">
+<p>在前面讨论的电阻元件电路中,电阻元件的欧姆定律反映的是电路中电阻元件的电压电流约束关系,而在一个电路中各处的电压和电流受元件类型和参数的影响。有关电路的几个概念:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.1_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">支路</dt>
+<dd>
+<p>通常情况下,电路中的每一分支称为支路,同一支路上的元件流过同一电流。电路如图1-16所示。具有３条支路,其中两条含电源的支路\(acb\)、\(adb\)称为有源支路。不含电源的支路\(ab\)
+称为无源支路。</p>
+</dd>
+<dt class="hdlist1">节点</dt>
+<dd>
+<p>电路中３条或３条以上的连接点称为节点,图1-16中有两个节点\(a\)、\(b\)。</p>
+</dd>
+<dt class="hdlist1">回路</dt>
+<dd>
+<p>电路中任一闭合路径称为回路,图1-16中有\(adba\)、\(abca\)、\(adbca\)3个回路。</p>
+</dd>
+<dt class="hdlist1">网孔</dt>
+<dd>
+<p>当回路内不含支路时,该回路被称为网孔。见图1-16中的\(adba\)、\(abca\)两个网孔。</p>
+</dd>
+<dt class="hdlist1">网络</dt>
+<dd>
+<p>就是电路,两个名词可以通用。</p>
+</dd>
+<dt class="hdlist1">二端网络</dt>
+<dd>
+<p>与外部连接只有两个端点的电路称为二端网络,也叫一端口网络,如图1-17所示。</p>
+</dd>
+<dt class="hdlist1">等效二端网络</dt>
+<dd>
+<p>当两个二端网络对外电路的作用效果相同、具有相同的外部特性时,这两个二端网络等效。图1-18所示的两个二端网络\(N_1\)与\(N2\),当它们接相同的外电路时,
+产生的电压、电流对应相等,即\(u_1=u_2,i_1=i_2\)，则\(N_1\)与\(N_2\)互为等效二端网络。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.1_2.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>需要指出的是,等效网络指的是对外等效，对内一般是不相等的,即内部电路结构可以不同,但对外部电路的作用(影响)是完全相同的。</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_基尔霍夫电流定律">1.5.2. 基尔霍夫电流定律</h4>
+<div class="paragraph">
+<p>基尔霍夫电流定律(Kirchhoff&#8217;s Current Law,KCL)叙述如下: 在电路中对任一节点,在任一时刻流进该节点的电流之和等于流出该节点的电流之和,即</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\sum i_{入}=\sum i_{出}\]
+</div>
+</div>
+<div class="paragraph">
+<p>对于图1-16中的节点a有</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-5}
+I_1+I_2=I_3
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>如果假设；流入节点的电流为负,流出节点的电流为正,那么基尔霍夫电流定律就可以叙述为:在电路中任何时刻,对任一节点所有支路电流的代数和等于零,即</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-６}
+\sum i=0
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>对于图1-16中的节点a有</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-7}
+-I_1-I_2+I_3=0
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>式(1-5)和式(1-７)是等价的,两种说法含义相同。+
+对节点b应用基尔霍夫电流定律有</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{equation}
+\tag{1-8}
+I_1+I_2-I_3=0
+\end{equation}\]
+</div>
+</div>
+<div class="paragraph">
+<p>式(1-8)乘负号就变换成式(1-７),所以两个方程互相不独立,即在两个节点的电路中,只有一个独立的电流方程。可证明,当电路中有\(n\)个节点时,有\(n-1\)个节点是独立的。</p>
+</div>
+<div class="paragraph">
+<p>【例1-4】 在图1-19所示电路中,各支路电流的参考方向如图所示,其中\(I_1=7A,I_2=-5A,I_4=2A,I_5=3A\),试求电流\(I_3\)的值。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.2_1.png" alt="can not view png" width="200" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong></p>
+</div>
+<div class="paragraph">
+<p>根据基尔霍夫定律有</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[I_1-I_2+I_3-I_4+I_5=0 \\
+
+\begin{align}
+I_3 &amp;=-I_1+I_2+I_4-I_5 \\
+	&amp;=[-7+(-5)+2-3]A \\
+	&amp;=-13A
+\end{align}\]
+</div>
+</div>
+<div class="paragraph">
+<p>从基尔霍夫电流定律可以推出以下两个结论。</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">推论１</dt>
+<dd>
+<p>任一时刻,穿过任一假设闭合面的电流代数和恒为零,如图1-20a所示的虚线框内为广义节点。</p>
+</dd>
+<dt class="hdlist1">推论２</dt>
+<dd>
+<p>若两个电路网络之间只有一根导线连接,则该连接导线中的电流为0,如图1-20b所示。</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.2_2.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>例如,在图1-20a中,</p>
+</div>
+<div class="paragraph">
+<p>对节点a有 \(-i_1-i_6+i_4=0\)<br>
+对节点b有 \(-i_2-i_4+i_5=0\)<br>
+对节点c有 \(-i_3-i_5+i_6=0\)</p>
+</div>
+<div class="paragraph">
+<p>把上面3个方程相加,得\(i_1+i+2+i+3=0\)</p>
+</div>
+<div class="paragraph">
+<p>即在图1-20a中,虚线所包围的封闭面电流的代数和为零。</p>
+</div>
+<div class="paragraph">
+<p>在图1-20b中,网络1与网络2之间只有一根导线连接,设网络1流进网络2的电流为I,但无网络2流进网络1的电流,根据KCL,则I=0。</p>
+</div>
+<div class="paragraph">
+<p>【例1-5】 电路如图1-21a所示,已知\(I_1=3A,I_2=4A,I_3=8A\),求恒流源的电流</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.2_3.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong> 把图1-21中的\(R_1、R_2\)所在支路看成闭合面,见图1-21b中的虚线部分。根据基尔霍夫电流定律的推广列方程有</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[I_1-I_2+I_3-I_s=0\]
+</div>
+</div>
+<div class="paragraph">
+<p>解得</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\begin{align}
+I_s&amp;=I_1-I_2+I_3 \\
+&amp;=(3-4+8)A \\
+&amp;=7A
+\end{align}\]
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_基尔霍夫电压定律">1.5.3. 基尔霍夫电压定律</h4>
+<div class="paragraph">
+<p>基尔霍夫电压定律(Kirchhoff&#8217;s Voltage Law,KVL)是反映电路中对组成任一回路的 有元件的电压之间的相互约束关系。表述如下:在电路中任何时刻,沿任一闭合回路的各元件电压代数和
+恒等于零,当该元件电压的方向与绕行方向一致时,取正;反之,取负。</p>
+</div>
+<div class="paragraph">
+<p>表达式为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\sum u =0\]
+</div>
+</div>
+<div class="paragraph">
+<p>在回路中,若有电压源存在,也表达为: \(\sum u = 0\)</p>
+</div>
+<div class="paragraph">
+<p>【例1-6】根据基尔霍夫电压定律,分别对如图1-16所示的各回路列方程。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.3_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong> 对各个回路选定绕行方向,如图1-22所示。</p>
+</div>
+<div class="paragraph">
+<p>对回路1有 \(U_{R1} + U_{R3} -U_{S1} = 0\)<br>
+或者	\(U_{S1} = U_{R1} + U_{R3}\)<br>
+对回路2有 \(-U_{R2} - U_{R3} + U_{S2} = 0\)<br>
+或者    \(U_{S2} = U_{R2} + U_{R3}\)<br>
+对大回路3有 \(U_{R1} - U_{R2} + U_{S2} - U_{S1} = 0\)<br>
+或者    \(U_{R1} - U_{S1} = U_{S1} - U_{R2}\)<br>
+\(U_{R1} - U_{R2} = U_{S1} - U_{S2}\)</p>
+</div>
+<div class="paragraph">
+<p>基尔霍夫电压定律不但适用于闭合回路,而且可推广应用于不闭合电路。如图1-23所示的部分电路,右侧ab间可以是一个元件也可以是电路网络。在这种情况下,基尔霍夫电压定律仍成立,
+表示为</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U_S= U+U_1 \\
+U_1-U_3+U=0\]
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.3_2.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p>【例1-7】电路如图1-24a所示,试求图中的电压\(U_4\)和E、B两点间的电压\(U_{EB}\)以及A、D两点间的电压\(U_{AD}\)。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.3_3.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong></p>
+</div>
+<div class="paragraph">
+<p>1) 在回路中选定绕行方向如图1-24b虚线1所示,根据KVL</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U_1 - U_2 + U_3 - U_4 -U_5 = 0 \\
+U_4 = U_1 - U_2 + U_3- U_5 = 5V\]
+</div>
+</div>
+<div class="paragraph">
+<p>2) 选绕行方向如图1-24b虚线2所示,根据KVL</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U_{EB} - U_1 + U_5 = 0\\
+U_{EB} = 1V\]
+</div>
+</div>
+<div class="paragraph">
+<p>3) 选绕行方向如图1-24b虚线3所示,根据KVL</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[U_{AD} - U_4 - U_5 = 0\]
+</div>
+</div>
+<div class="paragraph">
+<p>【例1-8】求图1-25a所示电路的开路电压\(U_{ab}\)。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.5.3_4.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<div class="paragraph">
+<p><strong>解:</strong> 先把图1-25a改画成图1-25b,求电流\(I\)。
+在回路1中,有\(12+3I-6+3I+2I+2^V-2^V=0\),则\(I=-1A\)。<br>
+根据基尔霍夫电压定律,在回路2中,得</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\left.
+\begin{array}{ll}
+U_{ad} &amp; = -2 \times 1 \\
+U_{dc} &amp; = -2+3 \times 1 +6 \\
+U_{cb} &amp; = -2^V \\
+U_{ab} &amp; = U_{ad} + U_{dc} + U_{cb} \\
+\end{array}
+\right\} =&gt;
+
+U_{ab} = [-2 \times 1 -2 +3 \times 1 + 6 - 2]^V=3^V\]
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_电位_电压的测定及电位图的绘制">1.6. 实践项目　电位,电压的测定及电位图的绘制</h3>
+<div class="paragraph">
+<div class="title">项目目的</div>
+<p>熟悉仪器仪表的使用,会测试电压和电位,理解电路中电位的相对性和电压的绝对性并掌握电位图的绘制方法。</p>
+</div>
+<div class="olist arabic">
+<div class="title">设备材料</div>
+<ol class="arabic">
+<li>
+<p>可调直流电源</p>
+</li>
+<li>
+<p>万用表</p>
+</li>
+<li>
+<p>电阻元件、导线若干。</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_任务1_测量电位和电压">1.6.1. 任务1 测量电位和电压</h4>
+<div class="paragraph">
+<p>在一个闭合电路中,各点电位的高低视所选的参考点位的不同而变化,但任意两点间的电位差(即电压)是恒定的,它不因参考点的变化而改变。</p>
+</div>
+<div class="olist arabic">
+<div class="title">操作步骤</div>
+<ol class="arabic">
+<li>
+<p>按图1-26接线。在图1-26中给各被测点编号,即A-E,并在坐标轴上按顺序、均匀间隔标上A、B、C、D、E。</p>
+</li>
+<li>
+<p>分别将两路直流稳压电源接入电路,令\(E_1=10V,E_2=6V\)。注意:先调准输出电压值,再接入实训电路中。</p>
+</li>
+<li>
+<p>以图1-26中的A点作为电位的参考点,参考点电位是0伏,分别测量B、C、D、E各点的电位值及相邻两点间的电压值\(U_{AB}、U_{BC}、U_{CD}、U_{DE}、U_{EA}\),并将数据填入表1-2中。</p>
+</li>
+<li>
+<p>以D点作为参考点,重复步骤3的测量,并将测得数据填入表1-2中。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.6.1_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. 表1-2实训记录表</caption>
+<colgroup>
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+<col style="width: 8%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">参考点</th>
+<th class="tableblock halign-left valign-top">电位与电压</th>
+<th class="tableblock halign-left valign-top">V<sub>A</sub></th>
+<th class="tableblock halign-left valign-top">V<sub>B</sub></th>
+<th class="tableblock halign-left valign-top">V<sub>C</sub></th>
+<th class="tableblock halign-left valign-top">V<sub>D</sub></th>
+<th class="tableblock halign-left valign-top">V<sub>E</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>AB</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>BC</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>CD</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>DE</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>EA</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">A</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">计算值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">测量值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">相对误差</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">D</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">计算值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">测量值</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">相对误差</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_任务2_绘制电位图">1.6.2. 任务2 绘制电位图</h4>
+<div class="paragraph">
+<p>电位图是一种一、四象限内的平面坐标折线图,其纵坐标为电位值,横坐标为各被测点。要制作某一电路的电位图,应先以一定的顺序对电路中各被测点编号。</p>
+</div>
+<div class="olist arabic">
+<div class="title">操作步骤</div>
+<ol class="arabic">
+<li>
+<p>在电位图中,任意两个被测点的纵坐标值之差即为该两点之间的电压值。</p>
+</li>
+<li>
+<p>在电路中,可任意选定电位参考点。对于不同的参考点,所绘出的电位图形式不一样的,但是其各点的电位变化却是相同的。分别对A、D两个参考点绘制电位图。</p>
+</li>
+<li>
+<p>以图1-26所示电路为例,根据测得的各点电位值,在各点所在垂线上描点。用直线依次连接相邻两个电位点,即可得到该电路的电位图。</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">注意事项</div>
+<ol class="arabic">
+<li>
+<p>可根据实训装置调整电位测试接线图。</p>
+</li>
+<li>
+<p>在测量电位时,用负表笔(黑色)接参考电位点,用正表笔(红色)接被测点。若数字表示正值,则表明该点电位为正(即高于参考点电位);若数字显示负值,则表明该点电位为负(即低于参考点电位)。</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">项目报告</div>
+<ol class="arabic">
+<li>
+<p>根据实践数据,绘制两个不同电位参考点的电位图形,并观察各对应点间的电压情况。</p>
+</li>
+<li>
+<p>完成数据表格中的计算,对误差进行必要的分析</p>
+</li>
+<li>
+<p>给出电位相对性和电压绝对性的原因。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_基尔霍夫定律的验证">1.7. 实践项目　基尔霍夫定律的验证</h3>
+<div class="paragraph">
+<div class="title">项目目的</div>
+<p>熟悉仪器仪表的使用,加深对基尔霍夫定律的理解,培养动手能力。</p>
+</div>
+<div class="olist arabic">
+<div class="title">设备材料</div>
+<ol class="arabic">
+<li>
+<p>可调直流电源</p>
+</li>
+<li>
+<p>万用表</p>
+</li>
+<li>
+<p>电阻元件、导线若干。</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_任务1_验证基尔霍夫电流定律">1.7.1. 任务1 验证基尔霍夫电流定律</h4>
+<div class="paragraph">
+<p>基尔霍夫电流定律是电路的基本定律。测量某电路的各支路电流,应能满足基尔霍夫电流定律(KCL),即对电路中的任一节点而言,应有\(\sum i=0\)。不论是线性电路还是非线性电路,都是普遍适用的。</p>
+</div>
+<div class="olist arabic">
+<div class="title">操作步骤</div>
+<ol class="arabic">
+<li>
+<p>接图1-27所示接线。</p>
+</li>
+<li>
+<p>测量各支路电流,将电流测量结果填入表1-3中。</p>
+</li>
+<li>
+<p>验证4个节点(即a、b、c、d)的\(\sum i\)是否等于0。将基尔霍夫电流定律验证结果填入表1-4中。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://192.168.5.5/image/circuit//1.7.1_1.png" alt="can not view png" width="600" height="300"></span></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. 表1-3 电流测量结果</caption>
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">I</th>
+<th class="tableblock halign-left valign-top">I<sub>1</sub></th>
+<th class="tableblock halign-left valign-top">I<sub>2</sub></th>
+<th class="tableblock halign-left valign-top">I<sub>3</sub></th>
+<th class="tableblock halign-left valign-top">I<sub>4</sub></th>
+<th class="tableblock halign-left valign-top">I<sub>5</sub></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">计算值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">测量值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. 表1-4 基尔霍夫电流定律验证结果</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">a</th>
+<th class="tableblock halign-left valign-top">b</th>
+<th class="tableblock halign-left valign-top">c</th>
+<th class="tableblock halign-left valign-top">d</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\sum i\) 计算值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\sum i\) 测量值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">误差</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_任务2_验证基尔霍夫电压定律">1.7.2. 任务2 验证基尔霍夫电压定律</h4>
+<div class="paragraph">
+<p>基尔霍夫电压定律也是电路的基本定律。测量某电路每个元件两端的电压,应能满足基尔霍夫电压定律(KVL),即对电路中的任何一个闭合回路而言,应有\(\sum u=0\)。不论是线性电路还是非线性电路,都是普遍适用的。</p>
+</div>
+<div class="olist arabic">
+<div class="title">操作步骤及方法</div>
+<ol class="arabic">
+<li>
+<p>接线图如图1-27所示。测量各支路的电压,将电压测量结果记入表1-5中。</p>
+</li>
+<li>
+<p>验证4个回路abcda、cbdc、acbda、E+acbE-的\(\sum u\)是否等于零。将基尔霍夫电压定律验证结果记入表1-6。</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. 表1-5 电压测量结果</caption>
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+<col style="width: 14%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">U<sub>ad</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>ac</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>dc</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>db</sub></th>
+<th class="tableblock halign-left valign-top">U<sub>cb</sub></th>
+<th class="tableblock halign-left valign-top">E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">计算值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">测量值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. 表1-6 基尔霍夫电压定律验证结果</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">abcda</th>
+<th class="tableblock halign-left valign-top">cbde</th>
+<th class="tableblock halign-left valign-top">acdba</th>
+<th class="tableblock halign-left valign-top">E+acbE-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\sum u\) 计算值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(\sum u\) 测量值</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">误差</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<div class="title">注意事项</div>
+<ol class="arabic">
+<li>
+<p>当调节电压时,应注意电压的量程</p>
+</li>
+<li>
+<p>当网络元件阻值与所给参考接线图1-27所示不一致时,可以按现有的电阻   成电路进行测试。</p>
+</li>
+<li>
+<p>注意电流表的量程</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">思考题</div>
+<ol class="arabic">
+<li>
+<p>根据图1-27所示的参数,计算出待测的电流和电压,记入相应的表中,以便随时可正确地选定各表的量程。</p>
+</li>
+<li>
+<p>在实训中,若表显示出负值,则说明什么问题?</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">项目报告</div>
+<ol class="arabic">
+<li>
+<p>将实践数据填入相应的表格中,选定节点a,验证KCL的正确性。</p>
+</li>
+<li>
+<p>根据实训数据,选定任意一个闭合回路,验证KVL的正确性。</p>
+</li>
+<li>
+<p>将计算结果和实验测量结果进行比较,分析误差原因。</p>
+</li>
+<li>
+<p>总结对基尔霍夫定律的认识。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题">1.8. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第2章_直流电路的分析和计算">第2章 直流电路的分析和计算</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_线性电阻网络等效变换">2.1. 线性电阻网络等效变换</h3>
+<div class="sect3">
+<h4 id="_电阻的串联_并联和混联及其等效变换">2.1.1. 电阻的串联,并联和混联及其等效变换</h4>
+<div class="videoblock">
+<div class="title"><strong>电阻的串联及其等效变换</strong></div>
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01536-40-41-series_circuit_equivalent-2.1.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="title"><strong>电阻的并联及其等效变换</strong></div>
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01543-44-45-parallel_circuit_equivalent-2.1.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="title"><strong>电阻的混联及其等效变换</strong></div>
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01546-49-series_and_parallel_circuit_equivalent-2.1.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电阻星形联结和三角形联结">2.1.2. 电阻星形联结和三角形联结</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01550-44-star_and_triangle_circuit-2.1.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_电源等效变换">2.2. 电源等效变换</h3>
+<div class="sect3">
+<h4 id="_独立源等效变换">2.2.1. 独立源等效变换</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01555-62-independent_source-eqivalent-2.2.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_受控源等效变换">2.2.2. 受控源等效变换</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_支路电流法">2.3. 支路电流法</h3>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01579-branch_circuit_analysis-2.3.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_节点电位法">2.4. 节点电位法</h3>
+<div class="sect3">
+<h4 id="_节点方程及其一般形式">2.4.1. 节点方程及其一般形式</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_节点法解题步骤">2.4.2. 节点法解题步骤</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_网孔电流法">2.5. 网孔电流法</h3>
+<div class="sect3">
+<h4 id="_网孔方程及其一般形式">2.5.1. 网孔方程及其一般形式</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01580-82-mesh_circuit-analysis-2.5.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_网孔法解题步骤">2.5.2. 网孔法解题步骤</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_叠加定理_齐性定理与替代定理">2.6. 叠加定理,齐性定理与替代定理</h3>
+<div class="sect3">
+<h4 id="_叠加定理">2.6.1. 叠加定理</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01583-86-superposition_theorem-2.6.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_齐性定理">2.6.2. 齐性定理</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01589-nomogeneity_property-2.6.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_替代定理">2.6.3. 替代定理</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_戴维南定理与诺顿定理">2.7. 戴维南定理与诺顿定理</h3>
+<div class="sect3">
+<h4 id="_戴维南定理">2.7.1. 戴维南定理</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01587-thevenins_theorem-2.7.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="title"><strong>戴维南定理应用举例</strong></div>
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01588-thevenins_theorem-example2.7.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_诺顿定理">2.7.2. 诺顿定理</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_最大功率传输定理">2.8. 最大功率传输定理</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_实践项目_验证叠加定理与替代定理">2.9. 实践项目　验证叠加定理与替代定理</h3>
+<div class="sect3">
+<h4 id="_任务1_验证叠加定理">2.9.1. 任务1 验证叠加定理</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_验证替代定理">2.9.2. 任务2 验证替代定理</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_测试有源二端网络和验证戴维南定理">2.10. 实践项目　测试有源二端网络和验证戴维南定理</h3>
+<div class="sect3">
+<h4 id="_任务1_有源二端网络测试">2.10.1. 任务1 有源二端网络测试</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_验证戴维南定理">2.10.2. 任务2 验证戴维南定理</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题_2">2.11. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第３章_动态电路的时域分析">第３章 动态电路的时域分析</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_动态元件">3.1. 动态元件</h3>
+<div class="sect3">
+<h4 id="_电感元件">3.1.1. 电感元件</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01592-inductance_01-3.1.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01591-inductance_02-3.1.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_电容元件">3.1.2. 电容元件</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01593-94-capacitance-3.1.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_换路定律及初始值的确定">3.2. 换路定律及初始值的确定</h3>
+<div class="sect3">
+<h4 id="_电路的过渡过程与换路定律">3.2.1. 电路的过渡过程与换路定律</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_电路初始值的确定">3.2.2. 电路初始值的确定</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01595-switching_law-3.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_一阶电路的零输入响应">3.3. 一阶电路的零输入响应</h3>
+<div class="sect3">
+<h4 id="_概述">3.3.1. 概述</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_rc电路的零输入响应">3.3.2. RC电路的零输入响应</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_rl电路的零输入响应">3.3.3. RL电路的零输入响应</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_一阶电路的零状态响应">3.4. 一阶电路的零状态响应</h3>
+<div class="sect3">
+<h4 id="_rc电路的零状态响应">3.4.1. RC电路的零状态响应</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_rl电路的零状态响应">3.4.2. RL电路的零状态响应</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_一阶电路的全响应">3.5. 一阶电路的全响应</h3>
+<div class="sect3">
+<h4 id="_全响应">3.5.1. 全响应</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_三要素法">3.5.2. 三要素法</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_阶跃函数和阶跃响应">3.6. 阶跃函数和阶跃响应</h3>
+<div class="sect3">
+<h4 id="_阶跃函数">3.6.1. 阶跃函数</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_阶跃响应">3.6.2. 阶跃响应</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_一阶电路的响应测试">3.7. 实践项目　一阶电路的响应测试</h3>
+<div class="sect3">
+<h4 id="_任务1_mulisim仿真软件的使用">3.7.1. 任务1 Mulisim仿真软件的使用</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_观察电容的充电_放电过程">3.7.2. 任务2 观察电容的充电,放电过程</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务3_方波输入的响应">3.7.3. 任务3 方波输入的响应</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题_3">3.8. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第4章_正弦交流电路">第4章 正弦交流电路</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_正弦量的基本概念">4.1. 正弦量的基本概念</h3>
+<div class="sect3">
+<h4 id="_瞬时值_最大值_有效值">4.1.1. 瞬时值,最大值,有效值</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01598-sinusoidal_quantity-4.1.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_周期_频率_角频率">4.1.2. 周期,频率,角频率</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01599-period_frequency_angularfrequency-4.1.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_相位_初相_相位差">4.1.3. 相位,初相,相位差</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_正弦量的相量表示">4.2. 正弦量的相量表示</h3>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01600-phaser_method-4.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_复数及其运算">4.2.1. 复数及其运算</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01601-phaser_method_example-4.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_正弦量的相量表示_2">4.2.2. 正弦量的相量表示</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_相量图">4.2.3. 相量图</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_正弦交流电路中的元器件">4.3. 正弦交流电路中的元器件</h3>
+<div class="sect3">
+<h4 id="_正弦交流电路中的基本元器件">4.3.1. 正弦交流电路中的基本元器件</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01602-03-sinusoidal_ac_circuit_components-4.3.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01604-sinusoidal_ac_circuit_components2-4.3.1.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_阻抗">4.3.2. 阻抗</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01605-impedance-4.3.2.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_导纳">4.3.3. 导纳</h4>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01608-admittance-4.3.3.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_阻抗与导纳的串并联">4.3.4. 阻抗与导纳的串并联</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_正弦交流电路的分析">4.4. 正弦交流电路的分析</h3>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01610-sinusoidal-circuit-analysis-example1-4.4.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01611-sinusoidal-circuit-analysis-example2-4.4.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01617-18-sinusoidal-circuit-analysis-example3-4.4.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01615-sinusoidal-circuit-analysis-example4-4.4.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="videoblock">
+<div class="content">
+<video preload="none" src="http://192.168.5.5/video/circuit/M4H01616-sinusoidal-circuit-analysis-example5-4.4.mp4" width="550" height="318" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_正弦交流电路的的相量分析法">4.4.1. 正弦交流电路的的相量分析法</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_正弦交流电路的的相量图解法">4.4.2. 正弦交流电路的的相量图解法</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_正弦交流电路的功率">4.5. 正弦交流电路的功率</h3>
+<div class="sect3">
+<h4 id="_电路基本元器件的功率">4.5.1. 电路基本元器件的功率</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_无源线性二端网络的功率">4.5.2. 无源线性二端网络的功率</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_功率因数的提高">4.5.3. 功率因数的提高</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_正弦交流电路中的谐振现象">4.6. 正弦交流电路中的谐振现象</h3>
+<div class="sect3">
+<h4 id="_串联谐振">4.6.1. 串联谐振</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_并联谐振">4.6.2. 并联谐振</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_交流电路的测量">4.7. 实践项目　交流电路的测量</h3>
+<div class="sect3">
+<h4 id="_任务1_感性电路的测量">4.7.1. 任务1 感性电路的测量</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_容性电路的测量">4.7.2. 任务2 容性电路的测量</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_并联电容提高功率因数">4.8. 实践项目　并联电容提高功率因数</h3>
+<div class="sect3">
+<h4 id="_任务1_功率因数与并联电容的关系">4.8.1. 任务1 功率因数与并联电容的关系</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_将功率因数提高到特定值">4.8.2. 任务2 将功率因数提高到特定值</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_选频电路的设计实现">4.9. 实践项目　选频电路的设计实现</h3>
+<div class="sect3">
+<h4 id="_任务1_lc选频电路的设计实现">4.9.1. 任务1 LC选频电路的设计实现</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_文氏桥选频电路的设计实现">4.9.2. 任务2 文氏桥选频电路的设计实现</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题_4">4.10. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第５章_三相交流电路">第５章 三相交流电路</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_三相交流电源">5.1. 三相交流电源</h3>
+<div class="sect3">
+<h4 id="_对称三相电压">5.1.1. 对称三相电压</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_三相电源的星形和三角形联结">5.1.2. 三相电源的星形和三角形联结</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_三相电压的相序">5.1.3. 三相电压的相序</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_对称三相电路的计算">5.2. 对称三相电路的计算</h3>
+<div class="sect3">
+<h4 id="_概述_2">5.2.1. 概述</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_对称负载星形联结的三相电路">5.2.2. 对称负载星形联结的三相电路</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_对称负载三角形联结的三相电路">5.2.3. 对称负载三角形联结的三相电路</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_不对称三相电路的计算">5.3. 不对称三相电路的计算</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_三相电路的功率及其测量">5.4. 三相电路的功率及其测量</h3>
+<div class="sect3">
+<h4 id="_三相电路的功率计算">5.4.1. 三相电路的功率计算</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_三相电路的功率测量">5.4.2. 三相电路的功率测量</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_三相电路的联结和测量">5.5. 实践项目　三相电路的联结和测量</h3>
+<div class="sect3">
+<h4 id="_任务1_三相电路的仿真">5.5.1. 任务1 三相电路的仿真</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_三相负载星形联结时的电压_电流及功率的测量">5.5.2. 任务2 三相负载星形联结时的电压,电流及功率的测量</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务3_三相负载三角形联结时的电压_电流及功率的测量">5.5.3. 任务3 三相负载三角形联结时的电压,电流及功率的测量</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题_5">5.6. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第6章_互感电路及磁路">第6章 互感电路及磁路</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_互感电路的基本知识">6.1. 互感电路的基本知识</h3>
+<div class="sect3">
+<h4 id="_互感的概念">6.1.1. 互感的概念</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_互感线圈的同名端">6.1.2. 互感线圈的同名端</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_互感线圈的的伏安关系">6.1.3. 互感线圈的的伏安关系</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_互感电路的计算">6.2. 互感电路的计算</h3>
+<div class="sect3">
+<h4 id="_正弦交流互感电路的分析法">6.2.1. 正弦交流互感电路的分析法</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_耦合电感的去耦等效电路分析法">6.2.2. 耦合电感的去耦等效电路分析法</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_磁路的基本知识">6.3. 磁路的基本知识</h3>
+<div class="sect3">
+<h4 id="_磁路的概念">6.3.1. 磁路的概念</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_磁路的基本物理量">6.3.2. 磁路的基本物理量</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_磁路的电磁定律">6.3.3. 磁路的电磁定律</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_铁磁材料的磁性能">6.3.4. 铁磁材料的磁性能</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_磁路分析">6.4. 磁路分析</h3>
+<div class="sect3">
+<h4 id="_直流磁路分析">6.4.1. 直流磁路分析</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_交流磁路分析">6.4.2. 交流磁路分析</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_实践项目_互感线圈的测量">6.5. 实践项目　互感线圈的测量</h3>
+<div class="sect3">
+<h4 id="_任务1_互感线圈同名端的判别">6.5.1. 任务1 互感线圈同名端的判别</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_任务2_互感线圈的互感测量">6.5.2. 任务2 互感线圈的互感测量</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题_6">6.6. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第7章_线性动态电路的复频域分析">第7章 线性动态电路的复频域分析</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_拉普拉斯变换及其性质">7.1. 拉普拉斯变换及其性质</h3>
+<div class="sect3">
+<h4 id="_拉普拉斯变换的定义">7.1.1. 拉普拉斯变换的定义</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_拉普拉斯变换的基本性质">7.1.2. 拉普拉斯变换的基本性质</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_常用信号的拉普拉斯变换">7.1.3. 常用信号的拉普拉斯变换</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_拉普拉斯反变换">7.2. 拉普拉斯反变换</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_动态线性电路的复频域模型">7.3. 动态线性电路的复频域模型</h3>
+<div class="sect3">
+<h4 id="_基尔霍夫定律的复频域形式">7.3.1. 基尔霍夫定律的复频域形式</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_动态电路元件的s域模型">7.3.2. 动态电路元件的s域模型</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_线性电路的复频域求解">7.4. 线性电路的复频域求解</h3>
+<div class="sect3">
+<h4 id="_线性电路的复频域等效模型">7.4.1. 线性电路的复频域等效模型</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_线性电路的复频域法求解">7.4.2. 线性电路的复频域法求解</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_习题_7">7.5. 习题</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第8章_非正弦周期电流电路的稳态分析">第8章 非正弦周期电流电路的稳态分析</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_非正弦周期函数的傅里叶级数展开式">8.1. 非正弦周期函数的傅里叶级数展开式</h3>
+<div class="sect3">
+<h4 id="_非正弦周期电流电路的基本概念">8.1.1. 非正弦周期电流电路的基本概念</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_非正弦周期函数的傅里叶级数展开式详述">8.1.2. 非正弦周期函数的傅里叶级数展开式详述</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_非正弦周期函数的傅里叶级数展开式的简化">8.1.3. 非正弦周期函数的傅里叶级数展开式的简化</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_非正弦周期函数的傅里叶级数查表求法">8.1.4. 非正弦周期函数的傅里叶级数查表求法</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_非正弦周期量的基本知识">8.2. 非正弦周期量的基本知识</h3>
+<div class="sect3">
+<h4 id="_有效值_平均值_平均功率">8.2.1. 有效值,平均值,平均功率</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_有效值_平均值_平均功率的计算">8.2.2. 有效值,平均值,平均功率的计算</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_非正弦周期电流电路的稳态分析">8.3. 非正弦周期电流电路的稳态分析</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_习题_8">8.4. 习题</h3>
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
