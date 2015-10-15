@@ -1,21 +1,10 @@
 {
-    "name": "MathJax-node",
-    "version": "0.3.0",
-    "description": "API's for calling MathJax from node.js",
+    "name": "MathJax-node-ahamojo",
+    "version": "0.1.0",
     "keywords": ["MathJax","math","svg","MathML","TeX","AsciiMath"],
-    "maintainers": [
-        "MathJax Consortium <info@mathjax.org> (http://www.mathjax.org)"
-    ],
-    "bugs": {
-        "url": "http://github.com/mathjax/MathJax-node/issues"
-    },
-    "license": {
-        "type": "Apache",
-        "url": "http://github.com/mathjax/MathJax-node/blob/master/LICENSE"
-    },
     "repository": {
         "type": "git",
-        "url": "git://github.com/mathjax/MathJax-node.git"
+        "url": "git://github.com/ghostxt/MathJax-node.git"
     },
     "dependencies": {
         "jsdom": "3.1.1",
