@@ -130,6 +130,16 @@ function processHTML(html,callback) {
   }, function (result) {
     document.body.innerHTML = result.html;
     document.head.appendChild(document.body.firstChild);
+    
+    
+    //remove mathjax javascript files
+    var script = document.getElementsByTagName('script');
+    for(var i = 0 ;i<script.length; i++){
+        if((script[i].src && script[i].src.indexOf('MathJax')!= -1) || (script[i].type && script[i].type== 'text/x-mathjax-config')){
+            script[i].parentNode.removeChild(script[i]);
+        }
+    }
+    
     if (argv.img !== "") {
       var img = document.getElementsByClassName("MathJax_SVG_IMG");
       for (var i = 0, m = img.length; i < m; i++) {
