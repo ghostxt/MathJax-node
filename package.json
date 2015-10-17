@@ -1,6 +1,6 @@
 {
     "name": "MathJax-node-ahamojo",
-    "version": "0.1.0",
+    "version": "0.10.0",
     "keywords": ["MathJax","math","svg","MathML","TeX","AsciiMath"],
     "repository": {
         "type": "git",
